@@ -7,7 +7,7 @@ namespace GradeBook.GradeBooks
 {
     public class RankedGradeBook : BaseGradeBook
     {
-        public RankedGradeBook(string name) : base(name)
+        public RankedGradeBook(string name, bool isWeighted) : base(name, isWeighted)
         {
             Type = GradeBookType.Ranked;
         }
@@ -20,10 +20,10 @@ namespace GradeBook.GradeBooks
             }
             switch (averageGrade)
             {
-                case double x when x >= 80.0: return 'A';
-                case double x when x >= 60.0: return 'B';
-                case double x when x >= 40.0: return 'C';
-                case double x when x >= 20.0: return 'D';
+                case double x when x >= 80 : return 'A';
+                case double x when x >= 60 : return 'B';
+                case double x when x >= 40 : return 'C';
+                case double x when x >= 20 : return 'D';
                 default: return 'F';
             }
         }
